@@ -1,9 +1,11 @@
 import { Eden } from "eden-sdk";
 
-const API_KEY = "admin";
-const API_SECRET = "admin";
+import dotenv from "dotenv";
+dotenv.config();
 
-const eden = new Eden(API_KEY, API_SECRET);
+const {EDEN_API_KEY, EDEN_API_SECRET} = process.env;
+
+const eden = new Eden(EDEN_API_KEY, EDEN_API_SECRET);
 
 let config = {
   text_input: "The Simulation Sessions happening on Mars, desertpunk nomads, solar energy",
